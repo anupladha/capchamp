@@ -2,5 +2,5 @@
 #GET http://localhost:4004/rest/product/addition(num1=15, num2=10)
 #GET http://localhost:4004/rest/product/subtraction(num1=15, num2=10)
 #GET http://localhost:4004/rest/product/myFunction(category=2)
-#GET http://localhost:4004/odata/v4/productshop/Product
-GET http://localhost:4004/odata/v4/productshop/Supplier
+GET http://localhost:4004/odata/v4/productshop/Product
+#GET http://localhost:4004/odata/v4/productshop/Supplier
