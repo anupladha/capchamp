@@ -2,5 +2,20 @@
 #GET http://localhost:4004/rest/product/addition(num1=15, num2=10)
 #GET http://localhost:4004/rest/product/subtraction(num1=15, num2=10)
 #GET http://localhost:4004/rest/product/myFunction(category=2)
-GET http://localhost:4004/odata/v4/productshop/Product
-#GET http://localhost:4004/odata/v4/productshop/Supplier
+#GET http://localhost:4004/odata/v4/productshop/Product
+#GET http://localhost:4004/odata/v4/productshop/Product?$expand=supplier
+GET http://localhost:4004/odata/v4/productshop/Product?$expand=supplier&$select=name,category,rating
+#GET http://localhost:4004/odata/v4/productshop/Supplier?
+#GET http://localhost:4004/odata/v4/productshop/Supplier?$expand=product
+#GET http://localhost:4004/odata/v4/productshop/Supplier?$expand=product&$select=name,city
+# POST http://localhost:4004/odata/v4/productshop/Product
+# Content-Type: application/json
+
+# {
+#       "emission": 60000,
+#       "rating": "D+",
+#       "name": "Maruti",
+#       "category": "4",
+#       "cost_price": 21566,
+#       "cost_stock": 25
+#     }
