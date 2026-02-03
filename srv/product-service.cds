@@ -2,15 +2,13 @@ using { sap.cap.prodshop as my } from '../db/schema.cds';
 
 service productshop
 {
-    @odata.draft.enabled
+    //@odata.draft.enabled
     entity Product as
         projection on my.Product
         actions
         {
             action orderProduct
             (
-                @title : 'Product Name'
-                name : String,
                 @title : 'Stock'
                 stock : Integer
             );
@@ -42,4 +40,4 @@ service productshop
     returns String;
 }
 
-annotate productshop with @(requires: 'productmanager');
+//annotate productshop with @(requires: 'productmanager');
