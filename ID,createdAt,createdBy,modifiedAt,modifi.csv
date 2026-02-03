@@ -1,0 +1,3 @@
+ID,createdAt,createdBy,modifiedAt,modifiedBy,emission,rating,name,category,criticality,cost_price,cost_stock,supplier_ID
+51e112b3-1ec7-4e29-a5c0-d543ac8a8a46,2026-02-03T10:01:52.628Z,anonymous,2026-02-03T10:01:52.628Z,anonymous,30,4,Audi,B,2,200000,121,1
+81544c0b-b86b-48b6-8646-fa2119aceeb0,2026-02-03T10:01:52.628Z,anonymous,2026-02-03T10:01:52.628Z,anonymous,70,5,Hyundai,A,3,323211,780,2
