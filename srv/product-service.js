@@ -27,8 +27,8 @@ module.exports = cds.service.impl(async function (srv) {
     })
 
     srv.before('orderProduct', async (req) => {
-        console.log(req.data)
-        console.log(req.params)
+        console.log(req.data) // data passed to Server
+        console.log(req.params) // capture ID of the entity to be updated
         ID = req.params[0].ID
 
         const result = await SELECT`cost_stock`.from(Product).where({ ID: ID })
@@ -44,10 +44,10 @@ module.exports = cds.service.impl(async function (srv) {
 
     srv.on('orderProduct', async (req) => {
         let updatedStock = req.data.stock + originalStock
-        console.log(updatedStock)
 
         const result = await UPDATE(Product).with({ cost_stock: updatedStock }).where({ ID: ID })
-        console.log("Updated Result", result)
+        console.log("Updated Result", result) // result is 1 then update query successful
+        
         return req.notify(`Order placed! Updated stock is now ${updatedStock}`)
     })
 })

@@ -4,6 +4,9 @@
   "description": "A simple CAP project.",
   "dependencies": {
     "@cap-js/hana": "^2",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/http-client": "^4.4.0",
+    "@sap-cloud-sdk/resilience": "^4.4.0",
     "@sap/cds": "^9",
     "@sap/xssec": "^4",
     "express": "^4"
@@ -60,6 +63,24 @@
         "kind": "sqlite",
         "credential": {
           "database": "db.sqlite"
+        }
+      },
+      "ProductMasterA2X": {
+        "kind": "odata-v2",
+        "model": "srv/external/ProductMasterA2X",
+        "[production]": {
+          "credentials": {
+            "path": "s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV"
+          }
+        },
+        "[development]": {
+          "credentials": {
+            "url": "https://sandbox.api.sap.com",
+            "path": "s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV",
+            "headers": {
+              "APIKey": "YyeXU1CKp13NAZrWbqywCmmacDli5gWz"
+            }
+          }
         }
       }
     }
